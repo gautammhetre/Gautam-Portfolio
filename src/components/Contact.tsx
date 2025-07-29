@@ -2,26 +2,74 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Save to database
+      const { error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            message: formData.message || null,
+          }
+        ]);
+
+      if (dbError) throw dbError;
+
+      // Send notification email
+      const { error: emailError } = await supabase.functions.invoke('send-contact-notification', {
+        body: { 
+          name: formData.name, 
+          email: formData.email, 
+          phone: formData.phone, 
+          message: formData.message 
+        }
+      });
+
+      if (emailError) {
+        console.warn('Email notification failed:', emailError);
+        // Don't throw error - form submission still succeeded
+      }
+
+      // Reset form
+      setFormData({ name: '', email: '', phone: '', message: '' });
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -120,6 +168,17 @@ const Contact = () => {
                   </div>
                   
                   <div>
+                    <Input
+                      name="phone"
+                      type="tel"
+                      placeholder="Your Phone Number (Optional)"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="transition-smooth focus:scale-105"
+                    />
+                  </div>
+                  
+                  <div>
                     <Textarea
                       name="message"
                       placeholder="Your Message"
@@ -133,10 +192,11 @@ const Contact = () => {
                   
                   <Button 
                     type="submit" 
+                    disabled={isSubmitting}
                     className="w-full glow-shadow hover:scale-105 transition-bounce"
                   >
                     <Send size={18} className="mr-2" />
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
