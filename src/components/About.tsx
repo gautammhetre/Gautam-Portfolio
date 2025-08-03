@@ -23,19 +23,9 @@ const About = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">Hey, I'm Gautam Mhetre — someone who’s always been curious about how things work and how to make them better. That curiosity turned into a passion for technology, and over the past few years, it’s grown into something deeper: a drive to build things that solve real problems.
-
-I’m currently pursuing my degree in Artificial Intelligence and Data Science from SPPU, graduating in 2026. Along the way, I’ve explored data science, machine learning, and web development — not just to learn them, but to apply them meaningfully. Whether it’s predicting air quality in Delhi or building a rule-based chatbot, I like creating things that actually do something.
-
-I don’t chase hype; I chase understanding. I believe learning never stops, and even a small project can teach something big. Outside of coding, I enjoy experimenting with new tools, helping out fellow learners, and pushing myself to think a little differently each day.
-
-This portfolio is a glimpse into what I’ve built, what I’m building, and the kind of work I want to keep doing.</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">I’m Gautam Mhetre, a developer driven by curiosity and a love for building things that matter. I’m currently studying Artificial Intelligence and Data Science, and I spend most of my time exploring how code, data, and design can come together to solve real-world problems.</p>
               
-              <p className="text-lg text-muted-foreground leading-relaxed">I’m currently pursuing my degree in Artificial Intelligence and Data Science from SPPU, graduating in 2026. Along the way, I’ve explored data science, machine learning, and web development not just to learn them, but to apply them meaningfully. Whether it’s predicting air quality in Delhi or building a rule-based chatbot, I like creating things that actually do something.
-
-I don’t chase hype; I chase understanding. I believe learning never stops, and even a small project can teach something big. Outside of coding, I enjoy experimenting with new tools, helping out fellow learners, and pushing myself to think a little differently each day.
-
-This portfolio is a glimpse into what I’ve built, what I’m building, and the kind of work I want to keep doing.</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">I’m currently pursuing my degree in Artificial Intelligence and Data Science from SPPU, graduating in 2026.From predicting air quality to designing simple chatbots, I enjoy working on projects that push me to learn and grow. I believe in staying curious, thinking practically, and always moving forward one line of code at a time.</p>
             </div>
             
             <div className="relative">
@@ -47,15 +37,7 @@ This portfolio is a glimpse into what I’ve built, what I’m building, and the
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {highlights.map((item, index) => <Card key={index} className="p-6 card-shadow hover:scale-105 transition-bounce">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="p-3 rounded-full bg-primary/10 text-primary">
-                    <item.icon size={32} />
-                  </div>
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
-              </Card>)}
+            {highlights.map((item, index) => {})}
           </div>
         </div>
       </div>
