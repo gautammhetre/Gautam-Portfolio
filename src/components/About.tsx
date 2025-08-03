@@ -37,7 +37,13 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {highlights.map((item, index) => {})}
+            {highlights.map((item, index) => (
+              <Card key={index} className="p-6 card-shadow hover:scale-105 transition-bounce">
+                <item.icon className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
