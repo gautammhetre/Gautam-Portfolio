@@ -6,39 +6,27 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with payment integration, inventory management, and analytics dashboard.",
-      image: "🛒",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      title: "Air Quality Prediction Model",
+      description: "Machine learning model to predict air quality levels using environmental data and historical patterns.",
+      image: "🌬️",
+      tech: ["Python", "Scikit-learn", "Pandas", "TensorFlow"],
       github: "https://github.com",
-      live: "https://demo.com",
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, file sharing, and team analytics.",
-      image: "📋",
-      tech: ["Vue.js", "Express", "MongoDB", "Socket.io"],
+      title: "Smart Chatbot Assistant",
+      description: "AI-powered chatbot with natural language processing capabilities for customer support automation.",
+      image: "🤖",
+      tech: ["Python", "NLP", "Flask", "OpenAI API"],
       github: "https://github.com",
-      live: "https://demo.com",
       featured: true
     },
     {
-      title: "Weather Dashboard",
-      description: "Beautiful weather application with location-based forecasts, interactive maps, and data visualization.",
-      image: "🌤️",
-      tech: ["React", "TypeScript", "Chart.js", "Weather API"],
+      title: "Data Visualization Dashboard",
+      description: "Interactive dashboard for analyzing and visualizing complex datasets with real-time updates.",
+      image: "📊",
+      tech: ["React", "D3.js", "Python", "FastAPI"],
       github: "https://github.com",
-      live: "https://demo.com",
-      featured: false
-    },
-    {
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio showcasing projects and skills with smooth animations and dark mode.",
-      image: "💼",
-      tech: ["Next.js", "Tailwind CSS", "Framer Motion", "MDX"],
-      github: "https://github.com",
-      live: "https://demo.com",
       featured: false
     }
   ];
@@ -76,13 +64,9 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <Button size="sm" className="flex items-center gap-2">
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </Button>
                     <Button variant="outline" size="sm" className="flex items-center gap-2">
                       <Github size={16} />
-                      Code
+                      View Code
                     </Button>
                   </div>
                 </CardContent>
@@ -99,9 +83,6 @@ const Projects = () => {
                   <div className="flex items-start justify-between mb-3">
                     <div className="text-3xl">{project.image}</div>
                     <div className="flex gap-2">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <ExternalLink size={16} />
-                      </Button>
                       <Button variant="ghost" size="icon" className="h-8 w-8">
                         <Github size={16} />
                       </Button>

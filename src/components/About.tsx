@@ -37,7 +37,22 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {highlights.map((item, index) => {})}
+            {highlights.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <Card key={index} className="p-6 card-shadow hover:scale-105 transition-bounce">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 card-gradient rounded-lg">
+                      <IconComponent className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                    <h3 className="font-semibold">{item.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>
