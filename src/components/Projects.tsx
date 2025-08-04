@@ -14,18 +14,26 @@ const Projects = () => {
       featured: true
     },
     {
+      title: "YOLOv5 Car Object Detection",
+      description: "Real-time car detection system using YOLOv5 deep learning model for traffic monitoring and analysis.",
+      image: "🚗",
+      tech: ["Python", "YOLOv5", "OpenCV", "PyTorch"],
+      github: "https://github.com",
+      featured: true
+    },
+    {
       title: "Smart Chatbot Assistant",
       description: "AI-powered chatbot with natural language processing capabilities for customer support automation.",
       image: "🤖",
       tech: ["Python", "NLP", "Flask", "OpenAI API"],
       github: "https://github.com",
-      featured: true
+      featured: false
     },
     {
-      title: "Data Visualization Dashboard",
-      description: "Interactive dashboard for analyzing and visualizing complex datasets with real-time updates.",
-      image: "📊",
-      tech: ["React", "D3.js", "Python", "FastAPI"],
+      title: "Portfolio Website",
+      description: "Modern, responsive portfolio showcasing projects and skills with smooth animations and dark mode.",
+      image: "💼",
+      tech: ["React", "Tailwind CSS", "TypeScript", "Framer Motion"],
       github: "https://github.com",
       featured: false
     }
