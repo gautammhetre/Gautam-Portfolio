@@ -16,7 +16,7 @@ const Skills = () => {
     },
     {
       title: "Currently Learning",
-      skills: ["Blockchain", "Cybersecurity"]
+      skills: ["Blockchain", "Cybersecurity", "Machine Learning", "SAP", "Gen AI"]
     }
   ];
 
