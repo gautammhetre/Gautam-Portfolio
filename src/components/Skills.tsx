@@ -16,7 +16,7 @@ const Skills = () => {
     },
     {
       title: "Currently Learning",
-      skills: ["Rust", "WebAssembly", "Three.js", "Machine Learning", "Blockchain", "Mobile Development"]
+      skills: ["Blockchain", "Cybersecurity"]
     }
   ];
 
