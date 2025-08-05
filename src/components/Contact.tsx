@@ -83,19 +83,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@yourportfolio.com",
-      href: "mailto:hello@yourportfolio.com"
+      value: "gautammhetre@gmail.com",
+      href: "mailto:gautammhetre@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+91 7058146651",
+      href: "tel:+917058146651"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Nashik, Maharashtra, IND",
       href: "#"
     }
   ];
