@@ -30,8 +30,12 @@ const About = () => {
             
             <div className="relative">
               <div className="w-full h-80 card-gradient rounded-2xl card-shadow animate-glow" />
-              <div className="absolute inset-4 bg-muted/20 rounded-xl flex items-center justify-center">
-                <span className="text-6xl">👨‍💻</span>
+              <div className="absolute inset-4 bg-muted/20 rounded-xl overflow-hidden">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Gautam Mhetre - AI & Data Science Student"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
             </div>
           </div>
