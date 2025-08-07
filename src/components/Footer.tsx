@@ -17,7 +17,7 @@ const Footer = () => {
           
           <div className="flex space-x-6">
             <a 
-              href="https://github.com" 
+              href="https://github.com/gautammhetre" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-smooth"
@@ -25,7 +25,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/gautam-mhetre-0132ba24a" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-smooth"
@@ -33,7 +33,7 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:hello@yourportfolio.com"
+              href="mailto:gautammhetre@gmail.com"
               className="text-muted-foreground hover:text-primary transition-smooth"
             >
               <Mail size={20} />
