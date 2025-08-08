@@ -1,24 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend",
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js", "HTML5", "CSS3", "JavaScript"]
-    },
-    {
-      title: "Backend",
-      skills: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB", "Redis", "GraphQL", "REST APIs"]
-    },
-    {
-      title: "Tools & DevOps",
-      skills: ["Git", "Docker", "AWS", "Vercel", "Figma", "VS Code", "Webpack", "CI/CD"]
-    },
-    {
-      title: "Currently Learning",
-      skills: ["Blockchain", "Cybersecurity", "SAP", "GEN AI"]
-    }
-  ];
+  const skills = ["Basic Web Development", "Python", "C++", "IoT", "Data Science", "Machine Learning", "Artificial Intelligence"];
 
   return (
     <section id="skills" className="py-20">
@@ -28,22 +11,15 @@ const Skills = () => {
             Technical <span className="text-gradient">Skills</span>
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {skillCategories.map((category, index) => (
-              <div key={index} className="space-y-6">
-                <h3 className="text-2xl font-semibold text-primary">{category.title}</h3>
-                <div className="flex flex-wrap gap-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <Badge 
-                      key={skillIndex} 
-                      variant="secondary" 
-                      className="px-4 py-2 text-sm hover:scale-110 transition-bounce card-shadow"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {skills.map((skill, index) => (
+              <Badge 
+                key={index} 
+                variant="secondary" 
+                className="px-6 py-3 text-base hover:scale-110 transition-bounce card-shadow"
+              >
+                {skill}
+              </Badge>
             ))}
           </div>
         </div>
