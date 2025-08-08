@@ -41,13 +41,13 @@ const Hero = () => {
           
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-12">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border hover:border-primary hover:scale-110 transition-bounce">
+            <a href="https://github.com/gautammhetre" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border hover:border-primary hover:scale-110 transition-bounce">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border hover:border-primary hover:scale-110 transition-bounce">
+            <a href="https://linkedin.com/in/gautam-mhetre-0132ba24a" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border hover:border-primary hover:scale-110 transition-bounce">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:hello@yourportfolio.com" className="p-3 rounded-full border border-border hover:border-primary hover:scale-110 transition-bounce">
+            <a href="mailto:gautammhetre@gmail.com" className="p-3 rounded-full border border-border hover:border-primary hover:scale-110 transition-bounce">
               <Mail size={24} />
             </a>
           </div>
