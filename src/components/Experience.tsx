@@ -5,28 +5,20 @@ import { Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: "AI Research Intern",
-      company: "Tech Innovation Lab",
-      location: "Remote",
-      period: "Jun 2024 - Aug 2024",
+      title: "Data Science Intern",
+      company: "Netleap IT And Training Solutions",
+      location: "Nashik, India",
+      period: "Dec 2024 - Feb 2025",
       description: "Worked on machine learning models for predictive analytics and data preprocessing pipelines.",
-      technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn"]
+      technologies: ["Python", "Pandas", "Scikit-learn", "Statistics"]
     },
     {
-      title: "Web Development Intern",
-      company: "Digital Solutions Inc",
-      location: "Pune, India",
-      period: "Dec 2023 - Feb 2024",
-      description: "Developed responsive web applications and contributed to full-stack development projects.",
-      technologies: ["React", "Node.js", "MongoDB", "Express.js"]
-    },
-    {
-      title: "Freelance Developer",
-      company: "Self-Employed",
-      location: "Remote",
-      period: "Jan 2023 - Present",
-      description: "Building custom web solutions and AI-powered applications for various clients.",
-      technologies: ["React", "Python", "FastAPI", "PostgreSQL"]
+      title: "Vice President",
+      company: "AIDS Department",
+      location: "Nashik, India",
+      period: "Aug 2024 - Aug 2025",
+      description: "Led academic, technical, and cultural initiatives as Vice President of the AIDS branch, organizing high-impact events like Blind Coding and Blindfold Maze with 300+ participants, while representing the department in college council decisions.",
+      technologies: ["Leadership", "Communication Skills", "Teamwork", "Public Speaking", "Management"]
     }
   ];
 
