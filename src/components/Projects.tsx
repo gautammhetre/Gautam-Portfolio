@@ -6,11 +6,11 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "Air Quality Prediction Model",
-      description: "Machine learning model to predict air quality levels using environmental data and historical patterns.",
+      title: "Delhi AQI Prediction",
+      description: "Machine learning model for predicting Air Quality Index (AQI) based on pollutant levels including CO, NO, NO2, O3, and SO2 concentrations.",
       image: "🌬️",
-      tech: ["Python", "Scikit-learn", "Pandas", "TensorFlow"],
-      github: "https://github.com",
+      tech: ["Python", "Machine Learning", "Data Science", "Pandas"],
+      github: "https://github.com/gautammhetre/Delhi-AQI-Prediction",
       featured: true
     },
     {
@@ -72,7 +72,12 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <Button variant="outline" size="sm" className="flex items-center gap-2">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="flex items-center gap-2"
+                      onClick={() => window.open(project.github, '_blank')}
+                    >
                       <Github size={16} />
                       View Code
                     </Button>
@@ -91,7 +96,12 @@ const Projects = () => {
                   <div className="flex items-start justify-between mb-3">
                     <div className="text-3xl">{project.image}</div>
                     <div className="flex gap-2">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        className="h-8 w-8"
+                        onClick={() => window.open(project.github, '_blank')}
+                      >
                         <Github size={16} />
                       </Button>
                     </div>
