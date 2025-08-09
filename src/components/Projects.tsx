@@ -36,6 +36,14 @@ const Projects = () => {
       tech: ["Python", "NLP", "Rule-based AI", "Text Processing"],
       github: "https://github.com/gautammhetre/rulebasedbot",
       featured: false
+    },
+    {
+      title: "Disease Recommendation System",
+      description: "Machine learning system that recommends diseases based on symptoms input, helping with preliminary medical diagnosis and healthcare guidance.",
+      image: "🏥",
+      tech: ["Python", "Machine Learning", "Healthcare", "Data Analysis"],
+      github: "https://github.com/gautammhetre/Disease-Recommendation-System",
+      featured: false
     }
   ];
 
