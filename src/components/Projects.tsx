@@ -22,19 +22,19 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "Smart Chatbot Assistant",
-      description: "AI-powered chatbot with natural language processing capabilities for customer support automation.",
-      image: "🤖",
-      tech: ["Python", "NLP", "Flask", "OpenAI API"],
-      github: "https://github.com",
-      featured: false
-    },
-    {
       title: "Portfolio Website",
       description: "Modern, responsive portfolio showcasing projects and skills with smooth animations and dark mode.",
       image: "💼",
       tech: ["React", "Tailwind CSS", "TypeScript", "Framer Motion"],
-      github: "https://github.com",
+      github: "https://github.com/gautammhetre/Gautam-Portfolio",
+      featured: true
+    },
+    {
+      title: "Smart Chatbot Assistant",
+      description: "Rule-based chatbot system with natural language processing capabilities for automated customer support and query handling.",
+      image: "🤖",
+      tech: ["Python", "NLP", "Rule-based AI", "Text Processing"],
+      github: "https://github.com/gautammhetre/rulebasedbot",
       featured: false
     }
   ];
