@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 import heroImage from '@/assets/hero-bg.jpg';
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -36,6 +36,11 @@ const Hero = () => {
             </Button>
             <Button variant="outline" size="lg" className="hover:scale-105 transition-bounce" onClick={() => scrollToSection('contact')}>
               Get In Touch
+            </Button>
+            <Button asChild variant="outline" size="lg" className="hover:scale-105 transition-bounce">
+              <a href="/Gautam_Mhetre_Resume.pdf" download aria-label="Download resume PDF">
+                <span className="inline-flex items-center gap-2"><Download size={20} />Download Resume</span>
+              </a>
             </Button>
           </div>
           
