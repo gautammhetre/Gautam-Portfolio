@@ -1,4 +1,4 @@
-import profilePhoto from '@/assets/profile-photo.jpg';
+
 
 const About = () => {
   return (
@@ -24,7 +24,7 @@ const About = () => {
               <div className="w-full h-80 card-gradient rounded-2xl card-shadow animate-glow" />
               <div className="absolute inset-4 bg-muted/20 rounded-xl overflow-hidden">
                 <img 
-                  src={profilePhoto} 
+                  src="/lovable-uploads/ba76cba0-3951-4d14-8df0-c29fb5bfaaf6.png" 
                   alt="Gautam Mhetre - AI & Data Science Student"
                   className="w-full h-full object-cover rounded-lg"
                 />
