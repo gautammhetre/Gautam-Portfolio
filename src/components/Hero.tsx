@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 import heroImage from '@/assets/hero-bg.jpg';
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -40,7 +40,9 @@ const Hero = () => {
           </div>
           <div className="flex justify-center mb-12">
             <Button asChild variant="outline" size="lg" className="hover:scale-105 transition-bounce">
-              <a href="/Gautam%27s%20CV.pdf" download aria-label="Resume PDF">Resume</a>
+              <a href="https://drive.google.com/file/d/1an6sCpqqBJHTld2am-2cX0gUKQeKWZVL/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Open resume on Google Drive">
+                <span className="inline-flex items-center gap-2"><Download size={20} />Resume</span>
+              </a>
             </Button>
           </div>
           
