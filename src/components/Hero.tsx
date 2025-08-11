@@ -18,11 +18,15 @@ const Hero = () => {
       
       {/* Gradient Overlay */}
       <div className="absolute inset-0 hero-gradient opacity-80" />
+
+      {/* Tech Grid + Scanlines */}
+      <div className="absolute inset-0 tech-grid" aria-hidden="true" />
+      <div className="absolute inset-0 scanlines" aria-hidden="true" />
       
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto animate-slide-up">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 font-monoAlt tracking-tight">
             <span className="text-gradient">Gautam</span>
             <br />
             <span className="text-foreground">Mhetre</span>

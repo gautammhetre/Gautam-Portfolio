@@ -143,3 +143,29 @@ All colors MUST be HSL.
     transition: var(--transition-bounce);
   }
 }
+
+/* Tech grid and scanlines overlays */
+@keyframes grid-shift {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 64px 32px, 0 0; }
+}
+
+.tech-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, hsl(var(--primary) / 0.06) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, hsl(var(--primary) / 0.06) 0 1px, transparent 1px 64px);
+  animation: grid-shift 20s linear infinite;
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(180deg, hsl(var(--foreground) / 0.02) 0 1px, transparent 1px 3px);
+  opacity: 0.15;
+}
