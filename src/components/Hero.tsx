@@ -25,7 +25,7 @@ const Hero = () => {
       
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-4xl mx-auto animate-slide-up mt-24 md:mt-32">
+        <div className="text-center max-w-4xl mx-auto animate-slide-up mt-12 md:mt-20">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 font-monoAlt tracking-tight">
             <span className="text-gradient">Gautam</span>
             <br />
