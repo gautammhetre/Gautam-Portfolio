@@ -10,7 +10,7 @@ const Hero = () => {
       });
     }
   };
-  return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pb-16 md:pb-24">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{
       backgroundImage: `url(${heroImage})`

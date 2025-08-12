@@ -2,7 +2,7 @@
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-background/50">
+    <section id="about" className="pt-32 pb-20 md:pt-40 bg-background/50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
@@ -22,7 +22,7 @@ const About = () => {
             
             <div className="relative">
               <div className="w-full h-80 card-gradient rounded-2xl card-shadow animate-glow" />
-              <div className="absolute inset-4 bg-muted/20 rounded-xl overflow-hidden">
+              <div className="absolute inset-4 rounded-xl overflow-hidden glass">
                 <img 
                   src="/lovable-uploads/ba76cba0-3951-4d14-8df0-c29fb5bfaaf6.png" 
                   alt="Gautam Mhetre - AI & Data Science Student"

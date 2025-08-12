@@ -144,6 +144,14 @@ All colors MUST be HSL.
   }
 }
 
+/* Glass effect card */
+.glass {
+  backdrop-filter: saturate(140%) blur(10px);
+  background: hsl(var(--card) / 0.55);
+  border: 1px solid hsl(var(--foreground) / 0.08);
+  box-shadow: 0 8px 24px hsl(var(--background) / 0.5), var(--card-shadow);
+}
+
 /* Tech grid and scanlines overlays */
 @keyframes grid-shift {
   0% { background-position: 0 0, 0 0; }
