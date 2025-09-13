@@ -103,7 +103,18 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      contact_submissions_admin_view: {
+        Row: {
+          created_at: string | null
+          data_hash: string | null
+          email: string | null
+          id: string | null
+          message: string | null
+          name: string | null
+          phone: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       has_role: {
