@@ -103,20 +103,21 @@ export type Database = {
       }
     }
     Views: {
-      contact_submissions_admin_view: {
-        Row: {
-          created_at: string | null
-          data_hash: string | null
-          email: string | null
-          id: string | null
-          message: string | null
-          name: string | null
-          phone: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
+      get_contact_submissions_for_admin: {
+        Args: { limit_count?: number }
+        Returns: {
+          created_at: string
+          data_hash: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
