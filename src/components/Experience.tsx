@@ -5,22 +5,6 @@ import { Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: "Event Coordinator",
-      company: "Coding Club - GCOERC",
-      location: "Nashik, India",
-      period: "Sept 2025 - Present",
-      description: "Recently joined as Event Coordinator for the college coding club, responsible for planning and organizing technical workshops, coding competitions, and collaborative programming events to enhance peer learning and technical skills development.",
-      technologies: ["Event Management", "Technical Workshops", "Community Building", "Project Coordination"]
-    },
-    {
-      title: "Internshala Student Partner",
-      company: "Internshala",
-      location: "Nashik, India",
-      period: "Aug 2025 - Present",
-      description: "Campus ambassador promoting Internshala's educational courses and training programs, building strategic networks within the college community, and facilitating career development opportunities for fellow students through workshops and awareness campaigns.",
-      technologies: ["Campus Marketing", "Networking", "Public Speaking", "Digital Marketing", "Student Engagement"]
-    },
-    {
       title: "Data Science Intern",
       company: "Netleap IT And Training Solutions",
       location: "Nashik, India",
@@ -35,6 +19,22 @@ const Experience = () => {
       period: "Aug 2024 - Aug 2025",
       description: "Led academic, technical, and cultural initiatives as Vice President of the AIDS branch, organizing high-impact events like Blind Coding and Blindfold Maze with 300+ participants, while representing the department in college council decisions.",
       technologies: ["Leadership", "Communication Skills", "Teamwork", "Public Speaking", "Management"]
+    },
+    {
+      title: "Event Coordinator",
+      company: "Coding Club - GCOERC",
+      location: "Nashik, India",
+      period: "Sept 2025 - Present",
+      description: "Recently joined as Event Coordinator for the college coding club, responsible for planning and organizing technical workshops, coding competitions, and collaborative programming events to enhance peer learning and technical skills development.",
+      technologies: ["Event Management", "Technical Workshops", "Community Building", "Project Coordination"]
+    },
+    {
+      title: "Internshala Student Partner",
+      company: "Internshala",
+      location: "Nashik, India",
+      period: "Aug 2025 - Present",
+      description: "Campus ambassador promoting Internshala's educational courses and training programs, building strategic networks within the college community, and facilitating career development opportunities for fellow students through workshops and awareness campaigns.",
+      technologies: ["Campus Marketing", "Networking", "Public Speaking", "Digital Marketing", "Student Engagement"]
     }
   ];
 
