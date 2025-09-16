@@ -2,6 +2,10 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Award, ExternalLink, Image } from 'lucide-react';
 import oracleBadge from '@/assets/certificates/oracle-badge.png';
+import deloitteCertificate from '@/assets/certificates/deloitte-certificate.png';
+import tataCertificate from '@/assets/certificates/tata-certificate.png';
+import dishaCertificate from '@/assets/certificates/disha-certificate.jpg';
+import iotArduinoCertificate from '@/assets/certificates/iot-arduino-certificate.png';
 
 const Certifications = () => {
   const certifications = [
@@ -23,7 +27,7 @@ const Certifications = () => {
       skills: ["Data Analytics", "Business Intelligence", "Strategic Analysis", "Problem Solving"],
       credentialId: "",
       verifyUrl: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_ghsBEMLzsDdNsrcTW_1751885115931_completion_certificate.pdf",
-      image: null
+      image: deloitteCertificate
     },
     {
       title: "Data Visualisation: Empowering Business with Effective Insights Job Simulation",
@@ -32,8 +36,8 @@ const Certifications = () => {
       description: "Specialized program focused on creating impactful data visualizations and deriving actionable business insights from complex datasets.",
       skills: ["Data Visualization", "Business Insights", "Dashboard Design", "Analytics"],
       credentialId: "",
-      verifyUrl: "",
-      image: null
+      verifyUrl: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_ghsBEMLzsDdNsrcTW_1753454165750_completion_certificate.pdf",
+      image: tataCertificate
     },
     {
       title: "Certificate Course in Programming",
@@ -41,9 +45,9 @@ const Certifications = () => {
       date: "2024",
       description: "Comprehensive programming course covering fundamental and advanced programming concepts, software development practices, and practical coding skills.",
       skills: ["Programming", "Software Development", "Coding", "Computer Science"],
-      credentialId: "",
+      credentialId: "D7553488329",
       verifyUrl: "",
-      image: null
+      image: dishaCertificate
     },
     {
       title: "IoT Using Arduino",
@@ -53,7 +57,7 @@ const Certifications = () => {
       skills: ["IoT", "Arduino", "Microcontrollers", "Embedded Systems"],
       credentialId: "",
       verifyUrl: "",
-      image: null
+      image: iotArduinoCertificate
     }
   ];
 
@@ -88,13 +92,17 @@ const Certifications = () => {
                 {/* Certificate Info */}
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 mb-1">
-                    <Award className="w-3 h-3 text-primary" />
+                    {cert.credentialId ? (
+                      <p className="text-xs text-muted-foreground font-mono">ID: {cert.credentialId}</p>
+                    ) : (
+                      <Award className="w-3 h-3 text-primary" />
+                    )}
                     {cert.verifyUrl && (
                       <a 
                         href={cert.verifyUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors"
+                        className="text-primary hover:text-primary/80 transition-colors ml-1"
                       >
                         <ExternalLink className="w-3 h-3" />
                       </a>
