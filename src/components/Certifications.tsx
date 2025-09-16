@@ -1,6 +1,7 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Award, ExternalLink, Image } from 'lucide-react';
+import oracleBadge from '@/assets/certificates/oracle-badge.png';
 
 const Certifications = () => {
   const certifications = [
@@ -10,9 +11,9 @@ const Certifications = () => {
       date: "2025",
       description: "Professional certification demonstrating expertise in Oracle Cloud Infrastructure data science services, machine learning, and advanced analytics capabilities.",
       skills: ["Oracle Cloud", "Data Science", "Machine Learning", "Analytics"],
-      credentialId: "",
-      verifyUrl: "",
-      image: null
+      credentialId: "C9AD3AFC099340261137BF2360FB2D1459269FF3BB4DBA882E98A6C0C5DE2FB8",
+      verifyUrl: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C9AD3AFC099340261137BF2360FB2D1459269FF3BB4DBA882E98A6C0C5DE2FB8",
+      image: oracleBadge
     },
     {
       title: "Deloitte Australia - Data Analytics Job Simulation",
@@ -21,7 +22,7 @@ const Certifications = () => {
       description: "Comprehensive job simulation program covering real-world data analytics challenges, business intelligence, and strategic decision-making processes.",
       skills: ["Data Analytics", "Business Intelligence", "Strategic Analysis", "Problem Solving"],
       credentialId: "",
-      verifyUrl: "",
+      verifyUrl: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_ghsBEMLzsDdNsrcTW_1751885115931_completion_certificate.pdf",
       image: null
     },
     {
@@ -88,6 +89,16 @@ const Certifications = () => {
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-1 mb-1">
                     <Award className="w-3 h-3 text-primary" />
+                    {cert.verifyUrl && (
+                      <a 
+                        href={cert.verifyUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 transition-colors"
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
                   </div>
                   <h3 className="text-sm font-semibold text-foreground mb-1 line-clamp-2">{cert.title}</h3>
                   <p className="text-xs text-primary font-medium mb-1">{cert.issuer}</p>
