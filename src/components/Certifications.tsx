@@ -33,6 +33,16 @@ const Certifications = () => {
       credentialId: "",
       verifyUrl: "",
       image: null
+    },
+    {
+      title: "Certificate Course in Programming",
+      issuer: "Disha Computer Institute - India",
+      date: "2024",
+      description: "Comprehensive programming course covering fundamental and advanced programming concepts, software development practices, and practical coding skills.",
+      skills: ["Programming", "Software Development", "Coding", "Computer Science"],
+      credentialId: "",
+      verifyUrl: "",
+      image: null
     }
   ];
 
