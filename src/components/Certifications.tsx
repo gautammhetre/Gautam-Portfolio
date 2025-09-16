@@ -43,6 +43,16 @@ const Certifications = () => {
       credentialId: "",
       verifyUrl: "",
       image: null
+    },
+    {
+      title: "IoT Using Arduino",
+      issuer: "Cognifront",
+      date: "2024",
+      description: "Hands-on course covering Internet of Things development using Arduino microcontrollers, sensors, and connectivity solutions.",
+      skills: ["IoT", "Arduino", "Microcontrollers", "Embedded Systems"],
+      credentialId: "",
+      verifyUrl: "",
+      image: null
     }
   ];
 
@@ -54,75 +64,43 @@ const Certifications = () => {
             My <span className="text-gradient">Certifications</span>
           </h2>
           
-          <div className="space-y-8">
+          {/* Certificate Grid - Small boxes in rows */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {certifications.map((cert, index) => (
-              <Card key={index} className="p-6 card-shadow hover:scale-[1.02] transition-all duration-300">
-                <div className="flex flex-col lg:flex-row gap-6">
-                  {/* Certificate Photo */}
-                  <div className="lg:w-64 flex-shrink-0">
-                    <div className="aspect-[4/3] bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
-                      {cert.image ? (
-                        <img 
-                          src={cert.image} 
-                          alt={`${cert.title} Certificate`}
-                          className="w-full h-full object-cover rounded-md"
-                        />
-                      ) : (
-                        <div className="text-center p-4">
-                          <Image className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-                          <p className="text-sm text-muted-foreground">Certificate Photo</p>
-                          <p className="text-xs text-muted-foreground mt-1">Add your certificate image here</p>
-                        </div>
-                      )}
+              <Card key={index} className="p-4 card-shadow hover:scale-105 transition-all duration-300">
+                {/* Certificate Photo */}
+                <div className="aspect-[4/3] bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center overflow-hidden mb-3">
+                  {cert.image ? (
+                    <img 
+                      src={cert.image} 
+                      alt={`${cert.title} Certificate`}
+                      className="w-full h-full object-cover rounded-md"
+                    />
+                  ) : (
+                    <div className="text-center p-2">
+                      <Image className="w-6 h-6 text-muted-foreground mx-auto mb-1" />
+                      <p className="text-xs text-muted-foreground">Certificate</p>
                     </div>
+                  )}
+                </div>
+                
+                {/* Certificate Info */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-1 mb-1">
+                    <Award className="w-3 h-3 text-primary" />
                   </div>
-
-                  {/* Certificate Details */}
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Award className="w-5 h-5 text-primary" />
-                          <h3 className="text-xl font-semibold text-foreground">{cert.title}</h3>
-                        </div>
-                        <p className="text-lg text-primary font-medium">{cert.issuer}</p>
-                      </div>
-                      <div className="flex flex-col md:text-right gap-2">
-                        <div className="flex items-center gap-1 text-muted-foreground md:justify-end">
-                          <Calendar className="w-4 h-4" />
-                          <span className="text-sm">{cert.date}</span>
-                        </div>
-                        {cert.verifyUrl && (
-                          <a
-                            href={cert.verifyUrl}
-                            className="flex items-center gap-1 text-primary hover:underline text-sm md:justify-end"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="w-3 h-3" />
-                            Verify Certificate
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {cert.description}
-                    </p>
-
-                    {cert.credentialId && (
-                      <p className="text-sm text-muted-foreground mb-4">
-                        <span className="font-medium">Credential ID:</span> {cert.credentialId}
-                      </p>
-                    )}
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {cert.skills.map((skill, skillIndex) => (
-                        <Badge key={skillIndex} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
+                  <h3 className="text-sm font-semibold text-foreground mb-1 line-clamp-2">{cert.title}</h3>
+                  <p className="text-xs text-primary font-medium mb-1">{cert.issuer}</p>
+                  <div className="flex items-center justify-center gap-1 text-muted-foreground mb-2">
+                    <Calendar className="w-3 h-3" />
+                    <span className="text-xs">{cert.date}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1 justify-center">
+                    {cert.skills.slice(0, 2).map((skill, skillIndex) => (
+                      <Badge key={skillIndex} variant="secondary" className="text-xs px-1 py-0">
+                        {skill}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </Card>
