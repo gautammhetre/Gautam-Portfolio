@@ -15,7 +15,7 @@ const Certifications = () => {
       date: "2025",
       description: "Professional certification demonstrating expertise in Oracle Cloud Infrastructure data science services, machine learning, and advanced analytics capabilities.",
       skills: ["Oracle Cloud", "Data Science", "Machine Learning", "Analytics"],
-      credentialId: "C9AD3AFC099340261137BF2360FB2D1459269FF3BB4DBA882E98A6C0C5DE2FB8",
+      credentialId: "",
       verifyUrl: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C9AD3AFC099340261137BF2360FB2D1459269FF3BB4DBA882E98A6C0C5DE2FB8",
       image: oracleBadge
     },
