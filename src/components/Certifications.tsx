@@ -1,5 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Calendar, Award, ExternalLink, Image } from 'lucide-react';
 import oracleBadge from '@/assets/certificates/oracle-badge.png';
 import deloitteCertificate from '@/assets/certificates/deloitte-certificate.png';
@@ -74,20 +75,37 @@ const Certifications = () => {
             {certifications.map((cert, index) => (
               <Card key={index} className="p-4 card-shadow hover:scale-105 transition-all duration-300">
                 {/* Certificate Photo */}
-                <div className="aspect-[4/3] bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center overflow-hidden mb-3">
-                  {cert.image ? (
-                    <img 
-                      src={cert.image} 
-                      alt={`${cert.title} Certificate`}
-                      className="w-full h-full object-cover rounded-md"
-                    />
-                  ) : (
-                    <div className="text-center p-2">
-                      <Image className="w-6 h-6 text-muted-foreground mx-auto mb-1" />
-                      <p className="text-xs text-muted-foreground">Certificate</p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="aspect-[4/3] bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center overflow-hidden mb-3 cursor-pointer hover:opacity-80 transition-opacity">
+                      {cert.image ? (
+                        <img 
+                          src={cert.image} 
+                          alt={`${cert.title} Certificate`}
+                          className="w-full h-full object-cover rounded-md"
+                        />
+                      ) : (
+                        <div className="text-center p-2">
+                          <Image className="w-6 h-6 text-muted-foreground mx-auto mb-1" />
+                          <p className="text-xs text-muted-foreground">Certificate</p>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-[90vh] p-0">
+                    <div className="relative">
+                      <img 
+                        src={cert.image} 
+                        alt={`${cert.title} Certificate - Full Size`}
+                        className="w-full h-auto max-h-[85vh] object-contain"
+                      />
+                      <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm rounded-lg p-2">
+                        <h3 className="font-semibold text-sm">{cert.title}</h3>
+                        <p className="text-xs text-muted-foreground">{cert.issuer} • {cert.date}</p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
                 
                 {/* Certificate Info */}
                 <div className="text-center">
