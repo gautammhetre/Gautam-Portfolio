@@ -21,38 +21,56 @@ const ImmersiveBackground = () => {
     top: number;
   }>>([]);
 
+  const [dataStreams, setDataStreams] = useState<Array<{
+    id: number;
+    top: number;
+    width: number;
+    animationDuration: number;
+    animationDelay: number;
+  }>>([]);
+
   useEffect(() => {
-    // Generate matrix rain columns
-    const columns = Array.from({ length: 15 }, (_, i) => ({
+    // Generate enhanced matrix rain columns
+    const columns = Array.from({ length: 25 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
-      animationDuration: 8 + Math.random() * 10,
+      animationDuration: 6 + Math.random() * 12,
       content: generateMatrixText()
     }));
     setMatrixColumns(columns);
 
-    // Generate floating code particles
-    const particles = Array.from({ length: 25 }, (_, i) => ({
+    // Generate more floating code particles
+    const particles = Array.from({ length: 40 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       content: getRandomCodeSnippet(),
-      animationDelay: Math.random() * 15
+      animationDelay: Math.random() * 20
     }));
     setCodeParticles(particles);
 
-    // Generate glowing tech dots
-    const dots = Array.from({ length: 20 }, (_, i) => ({
+    // Generate more glowing tech dots
+    const dots = Array.from({ length: 35 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       top: Math.random() * 100
     }));
     setTechDots(dots);
+
+    // Generate data streams
+    const streams = Array.from({ length: 15 }, (_, i) => ({
+      id: i,
+      top: Math.random() * 100,
+      width: 100 + Math.random() * 200,
+      animationDuration: 3 + Math.random() * 4,
+      animationDelay: Math.random() * 8
+    }));
+    setDataStreams(streams);
   }, []);
 
   const generateMatrixText = () => {
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンﾊﾝﾏｰｶｰ';
     let result = '';
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
       result += chars.charAt(Math.floor(Math.random() * chars.length)) + '\n';
     }
     return result;
@@ -61,12 +79,17 @@ const ImmersiveBackground = () => {
   const getRandomCodeSnippet = () => {
     const snippets = [
       'const', 'function', 'return', 'import', 'export', 'class', 'async', 'await',
-      'useState', 'useEffect', 'console.log', 'npm install', 'git commit',
-      'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'API', 'JSON',
-      'SELECT *', 'INSERT', 'UPDATE', 'DELETE', 'WHERE', 'JOIN',
-      '<div>', '</div>', '{}', '[]', '=>', '&&', '||', '!==',
-      'try', 'catch', 'finally', 'throw', 'new Error', 'Promise',
-      'map()', 'filter()', 'reduce()', 'forEach()', 'push()', 'pop()'
+      'useState', 'useEffect', 'console.log', 'npm install', 'git commit', 'git push',
+      'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'API', 'JSON', 'XML',
+      'SELECT *', 'INSERT', 'UPDATE', 'DELETE', 'WHERE', 'JOIN', 'FROM', 'ORDER BY',
+      '<div>', '</div>', '<span>', '</span>', '{}', '[]', '=>', '&&', '||', '!==', '===',
+      'try', 'catch', 'finally', 'throw', 'new Error', 'Promise', 'resolve', 'reject',
+      'map()', 'filter()', 'reduce()', 'forEach()', 'push()', 'pop()', 'shift()', 'splice()',
+      'npm', 'yarn', 'webpack', 'vite', 'babel', 'eslint', 'prettier', 'docker',
+      'localhost', '127.0.0.1', 'http://', 'https://', 'fetch()', 'axios', 'curl',
+      '200 OK', '404', '500', 'GET', 'POST', 'PUT', 'DELETE', 'PATCH',
+      'rgb()', 'hsl()', '#ffffff', '#000000', 'px', 'rem', 'em', '%',
+      'flex', 'grid', 'absolute', 'relative', 'fixed', 'sticky', 'block', 'inline'
     ];
     return snippets[Math.floor(Math.random() * snippets.length)];
   };
@@ -112,6 +135,22 @@ const ImmersiveBackground = () => {
           >
             {particle.content}
           </div>
+        ))}
+      </div>
+
+      {/* Data streams */}
+      <div className="data-streams">
+        {dataStreams.map((stream) => (
+          <div
+            key={stream.id}
+            className="data-stream"
+            style={{
+              top: `${stream.top}%`,
+              width: `${stream.width}px`,
+              animationDuration: `${stream.animationDuration}s`,
+              animationDelay: `${stream.animationDelay}s`
+            }}
+          />
         ))}
       </div>
 

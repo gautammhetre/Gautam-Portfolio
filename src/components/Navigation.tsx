@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import CertificationsDropdown from '@/components/CertificationsDropdown';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,6 +61,7 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <CertificationsDropdown />
           </div>
 
           {/* Mobile Menu Button */}
