@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react';
 
 const ImmersiveBackground = () => {
-  const [matrixColumns, setMatrixColumns] = useState<Array<{
-    id: number;
-    left: number;
-    animationDuration: number;
-    content: string;
-  }>>([]);
 
 
   const [techDots, setTechDots] = useState<Array<{
@@ -24,14 +18,6 @@ const ImmersiveBackground = () => {
   }>>([]);
 
   useEffect(() => {
-    // Generate enhanced matrix rain columns
-    const columns = Array.from({ length: 25 }, (_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      animationDuration: 6 + Math.random() * 12,
-      content: generateMatrixText()
-    }));
-    setMatrixColumns(columns);
 
 
     // Generate more glowing tech dots
@@ -53,14 +39,6 @@ const ImmersiveBackground = () => {
     setDataStreams(streams);
   }, []);
 
-  const generateMatrixText = () => {
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンﾊﾝﾏｰｶｰ';
-    let result = '';
-    for (let i = 0; i < 25; i++) {
-      result += chars.charAt(Math.floor(Math.random() * chars.length)) + '\n';
-    }
-    return result;
-  };
 
 
   return (
@@ -74,22 +52,6 @@ const ImmersiveBackground = () => {
       {/* Scanlines */}
       <div className="scanlines" />
 
-      {/* Matrix rain columns */}
-      <div className="matrix-container">
-        {matrixColumns.map((column) => (
-          <div
-            key={column.id}
-            className="matrix-column"
-            style={{
-              left: `${column.left}%`,
-              animationDuration: `${column.animationDuration}s`,
-              animationDelay: `${Math.random() * 5}s`
-            }}
-          >
-            {column.content}
-          </div>
-        ))}
-      </div>
 
 
       {/* Data streams */}
