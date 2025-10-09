@@ -8,12 +8,6 @@ const ImmersiveBackground = () => {
     content: string;
   }>>([]);
 
-  const [codeParticles, setCodeParticles] = useState<Array<{
-    id: number;
-    left: number;
-    content: string;
-    animationDelay: number;
-  }>>([]);
 
   const [techDots, setTechDots] = useState<Array<{
     id: number;
@@ -39,14 +33,6 @@ const ImmersiveBackground = () => {
     }));
     setMatrixColumns(columns);
 
-    // Generate more floating code particles
-    const particles = Array.from({ length: 40 }, (_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      content: getRandomCodeSnippet(),
-      animationDelay: Math.random() * 20
-    }));
-    setCodeParticles(particles);
 
     // Generate more glowing tech dots
     const dots = Array.from({ length: 35 }, (_, i) => ({
@@ -76,23 +62,6 @@ const ImmersiveBackground = () => {
     return result;
   };
 
-  const getRandomCodeSnippet = () => {
-    const snippets = [
-      'const', 'function', 'return', 'import', 'export', 'class', 'async', 'await',
-      'useState', 'useEffect', 'console.log', 'npm install', 'git commit', 'git push',
-      'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'API', 'JSON', 'XML',
-      'SELECT *', 'INSERT', 'UPDATE', 'DELETE', 'WHERE', 'JOIN', 'FROM', 'ORDER BY',
-      '<div>', '</div>', '<span>', '</span>', '{}', '[]', '=>', '&&', '||', '!==', '===',
-      'try', 'catch', 'finally', 'throw', 'new Error', 'Promise', 'resolve', 'reject',
-      'map()', 'filter()', 'reduce()', 'forEach()', 'push()', 'pop()', 'shift()', 'splice()',
-      'npm', 'yarn', 'webpack', 'vite', 'babel', 'eslint', 'prettier', 'docker',
-      'localhost', '127.0.0.1', 'http://', 'https://', 'fetch()', 'axios', 'curl',
-      '200 OK', '404', '500', 'GET', 'POST', 'PUT', 'DELETE', 'PATCH',
-      'rgb()', 'hsl()', '#ffffff', '#000000', 'px', 'rem', 'em', '%',
-      'flex', 'grid', 'absolute', 'relative', 'fixed', 'sticky', 'block', 'inline'
-    ];
-    return snippets[Math.floor(Math.random() * snippets.length)];
-  };
 
   return (
     <>
@@ -122,21 +91,6 @@ const ImmersiveBackground = () => {
         ))}
       </div>
 
-      {/* Floating code particles */}
-      <div className="code-particles">
-        {codeParticles.map((particle) => (
-          <div
-            key={particle.id}
-            className="code-particle"
-            style={{
-              left: `${particle.left}%`,
-              animationDelay: `${particle.animationDelay}s`
-            }}
-          >
-            {particle.content}
-          </div>
-        ))}
-      </div>
 
       {/* Data streams */}
       <div className="data-streams">
