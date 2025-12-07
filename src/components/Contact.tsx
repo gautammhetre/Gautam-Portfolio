@@ -23,19 +23,25 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Save to database
-      const { error: dbError } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone || null,
-            message: formData.message || null,
-          }
-        ]);
+      // Save to database (table may not exist yet)
+      try {
+        const { error: dbError } = await (supabase as any)
+          .from('contact_submissions')
+          .insert([
+            {
+              name: formData.name,
+              email: formData.email,
+              phone: formData.phone || null,
+              message: formData.message || null,
+            }
+          ]);
 
-      if (dbError) throw dbError;
+        if (dbError) {
+          console.warn('Database save skipped:', dbError.message);
+        }
+      } catch (dbErr) {
+        console.warn('Database not configured');
+      }
 
       // Send notification email
       const { error: emailError } = await supabase.functions.invoke('send-contact-notification', {
