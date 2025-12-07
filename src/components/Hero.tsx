@@ -1,8 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 import heroImage from '@/assets/hero-bg.jpg';
+import useTypingAnimation from '@/hooks/useTypingAnimation';
 
 const Hero = () => {
+  const tagline = "Curious data enthusiast and creative technologist blending AI, design, and innovation to build intelligent, meaningful digital experiences.";
+  const { displayedText, isComplete } = useTypingAnimation(tagline, 30, 800);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -40,11 +44,12 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-text-reveal stagger-3">
-            Curious data enthusiast and creative technologist blending AI, design, and innovation to build intelligent, meaningful digital experiences.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto min-h-[4rem] md:min-h-[3rem]">
+            {displayedText}
+            <span className={`inline-block w-0.5 h-6 ml-1 bg-primary align-middle ${isComplete ? 'animate-pulse' : 'animate-blink-caret'}`} />
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-text-reveal stagger-4">
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-4 transition-all duration-500 ${isComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Button 
               size="lg" 
               className="glow-shadow hover:scale-105 transition-bounce animate-float-gentle" 
@@ -62,7 +67,7 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="flex justify-center mb-12 animate-text-reveal stagger-5">
+          <div className={`flex justify-center mb-12 transition-all duration-500 delay-100 ${isComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Button asChild variant="outline" size="lg" className="hover:scale-105 transition-bounce">
               <a 
                 href="https://drive.google.com/file/d/1an6sCpqqBJHTld2am-2cX0gUKQeKWZVL/view?usp=drive_link" 
@@ -79,7 +84,7 @@ const Hero = () => {
           </div>
           
           {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-12 animate-text-reveal stagger-6">
+          <div className={`flex justify-center space-x-6 mb-12 transition-all duration-500 delay-200 ${isComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <a 
               href="https://github.com/gautammhetre" 
               target="_blank" 
@@ -107,9 +112,9 @@ const Hero = () => {
           {/* Scroll Indicator */}
           <button 
             onClick={() => scrollToSection('about')} 
-            className="animate-float-gentle hover:scale-110 transition-smooth"
+            className={`animate-float-gentle hover:scale-110 transition-all duration-500 delay-300 ${isComplete ? 'opacity-100' : 'opacity-0'}`}
           >
-            <ArrowDown size={32} className="text-primary animate-shimmer" />
+            <ArrowDown size={32} className="text-primary" />
           </button>
         </div>
       </div>

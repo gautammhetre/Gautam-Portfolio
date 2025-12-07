@@ -74,6 +74,15 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes blink-caret {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .animate-text-reveal {
   animation: text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
@@ -116,6 +125,10 @@ All colors MUST be HSL.
   );
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
+}
+
+.animate-blink-caret {
+  animation: blink-caret 0.7s step-end infinite;
 }
 
 .stagger-1 { animation-delay: 0.1s; }
